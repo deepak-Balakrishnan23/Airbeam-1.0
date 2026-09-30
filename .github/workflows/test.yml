@@ -1,0 +1,28 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Plain shell steps only: the runner already has git and Node, and the tests
+# need nothing installed.
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch this commit
+        env:
+          TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          git init -q .
+          git fetch -q --depth 1 "https://x-access-token:${TOKEN}@github.com/${REPO}.git" "$SHA"
+          git checkout -q FETCH_HEAD
+      - name: Test
+        run: node --version && npm test

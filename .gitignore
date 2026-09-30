@@ -1,0 +1,5 @@
+.DS_Store
+*.local
+.certs/
+node_modules/
+dist/

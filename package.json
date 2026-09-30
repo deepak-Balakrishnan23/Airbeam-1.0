@@ -1,0 +1,17 @@
+{
+  "name": "airbeam",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Send a file between two devices by light, sound or Wi-Fi. No server, no account.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "dev:https": "node scripts/dev-cert.mjs && node scripts/serve.mjs",
+    "test": "node test/run.mjs",
+    "icons": "node scripts/gen-icons.mjs",
+    "symbols": "node scripts/gen-symbols.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
