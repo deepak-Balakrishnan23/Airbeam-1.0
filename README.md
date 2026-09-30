@@ -14,6 +14,8 @@ page. Pick a file and choose how it travels; on the other device, tap
 
 ## Running it
 
+https://airbeam-seven.vercel.app/
+
 ```bash
 npm run dev         # http://localhost:5173
 npm run dev:https   # the same over HTTPS, for phones on the LAN
